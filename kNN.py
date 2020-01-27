@@ -1,7 +1,7 @@
 """
 Applied Machine Learning Project_1: Using kNN
 
-COPYRIGHT (C) 2020 John Fahringer (jrf5001@yahoo.com) and Naomi Burhoe ()
+COPYRIGHT (C) 2020 John Fahringer (jrf5001@yahoo.com) and Naomi Burhoe (naomi.burhoe@hotmail.com)
 All rights reserved.
 
 This program tries to classify a portion of our selected data set of
