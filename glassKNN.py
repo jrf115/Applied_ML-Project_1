@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[9]:
+# In[6]:
 
 
 """
@@ -35,18 +35,22 @@ cmap = cm.get_cmap('gnuplot')
 scatter = scatter_matrix(X_train, c= y_train, marker = 'o', s=40, hist_kwds={'bins':15}, figsize=(9,9), cmap=cmap)
 
 
-# In[10]:
+# In[18]:
 
 
 # Create classifier object
+import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(n_neighbors = 5, weights = 'uniform')
+knn = KNeighborsClassifier(n_neighbors = 4, weights = 'uniform')
 
 # Train the classifier (fit the estimator) using the training data
 knn.fit(X_train, y_train)
 
 # Estimate the accuracy of the classifier on future data, using the test data
 knn.score(X_test, y_test)
+
+
+# In[8]:
 
 
 # How sensitive is k-NN classification accuracy to the choice of the 'k' parameter?
@@ -62,6 +66,10 @@ plt.ylabel('accuracy')
 plt.scatter(k_range, scores)
 plt.xticks([0, 5, 10, 15, 20])
 plt.show()
+
+
+# In[9]:
+
 
 # How sensitive is k-NN classification accuracy to the train/test split proportion?
 import numpy as np
