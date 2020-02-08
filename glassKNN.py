@@ -26,7 +26,7 @@ X = glass[['RI','Na','Mg','Al','Si','K','Ca','Ba','Fe']]
 y = glass['Type']
 
 from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=.75, random_state=0)
 
 # plotting a scatter matrix
 from matplotlib import cm
@@ -41,7 +41,7 @@ scatter = scatter_matrix(X_train, c= y_train, marker = 'o', s=40, hist_kwds={'bi
 # Create classifier object
 import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(n_neighbors = 4, weights = 'uniform')
+knn = KNeighborsClassifier(n_neighbors = 5, weights = 'uniform')
 
 # Train the classifier (fit the estimator) using the training data
 knn.fit(X_train, y_train)
